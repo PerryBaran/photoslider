@@ -1,9 +1,21 @@
 import './style.css';
-import { something } from './slider';
+import { nextPhoto, previousPhoto, removeStyle, createNavButtons, choosePhoto } from './slider';
+
 
 const photoArray = Array.from(document.getElementsByClassName('photo'));
-photoArray.forEach((photo) => {
-    photo.addEventListener('click', () => {
-        something(photoArray);
-    });
+removeStyle(photoArray);
+
+const frame = document.getElementById('frame');
+frame.addEventListener('click', () => {
+    nextPhoto(photoArray);
+});
+
+const forwards = document.getElementById('forwards');
+forwards.addEventListener('click', () => {
+    nextPhoto(photoArray);
+});
+
+const backwards = document.getElementById('backwards');
+backwards.addEventListener('click', () => {
+    previousPhoto(photoArray);
 });

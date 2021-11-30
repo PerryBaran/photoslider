@@ -1,28 +1,29 @@
 * {
     box-sizing: border-box;
     margin: auto;
-    font-family:monospace;
+    font-family: Arial, Helvetica, sans-serif;
     -webkit-tap-highlight-color:  rgba(255, 255, 255, 0);
     background-color: rgb(53, 53, 53);
+    overflow: hidden;
 }
 
 #frame {
     width: 100vw;
     height: 100vh;
-    background-color: red;
 }
 
 
 img {
-    display: none;
     position: absolute;
     inset: 0;
+    background: white;
     max-height: 100%;
     max-width: 100%;
+    opacity: 0;
 }
 
 #current {
-    display: block;
+    opacity: 1;
     transition: 2s;
 }
 
@@ -34,4 +35,61 @@ img {
 #next {
     transform: translateX(200%);
     transition: 2s;
+}
+
+button {
+    cursor: pointer;
+}
+.side-buttons {
+    position: absolute;
+    top: 10%;
+    height: 80%;
+    width: 80px;
+    opacity: 0.1;
+    border: none;
+    border-radius: 1rem;
+    background: none;
+    font-size: 7rem;
+}
+
+.side-buttons:hover {
+    opacity: 1;
+    font-size: 8rem;
+    background-color: rgba(0, 0, 0, 0.384);
+    box-shadow: 0 0 2rem rgb(0, 0, 0);
+    backdrop-filter: blur(0.1rem);
+    transition: 0.5s;
+}
+
+#forwards {
+    right: 20px;
+}
+
+#backwards {
+    left: 20px;
+}
+
+#container {
+    position: absolute;
+    bottom: 40px;
+    width: 100%;
+    text-align: center;
+}
+
+.nav-buttons {
+    margin-left: 4px;
+    margin-right: 4px;
+    height: 20px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: none;
+    background: white;
+    opacity: 0.2;
+    transition: 0.5s;
+}
+
+.nav-buttons:hover {
+    height: 25px;
+    opacity: 1;
+    transition: 1s;
 }
